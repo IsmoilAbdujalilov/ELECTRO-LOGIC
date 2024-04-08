@@ -19,7 +19,7 @@ import {
 } from "mdb-react-ui-kit";
 
 export default function App() {
-  const [isAuthUser, setIsAuthUser] = useState<boolean>(false);
+  const [isAuthUser, _] = useState<boolean>(false);
   const [openNavText, setOpenNavText] = useState<boolean>(false);
 
   const navigate = useNavigate();
