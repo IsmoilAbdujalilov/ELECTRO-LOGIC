@@ -18,6 +18,7 @@ import {
   MDBDropdownToggle,
 } from "mdb-react-ui-kit";
 import { Logo } from "../../assets/images/png";
+import { ElectricLogicLogo } from "../../assets/images/svg";
 
 export default function App() {
   const [isAuthUser, _] = useState<boolean>(false);
@@ -26,17 +27,17 @@ export default function App() {
   const navigate = useNavigate();
 
   return (
-    <MDBNavbar light sticky expand="lg" bgColor="white" style={{ zIndex: 1 }}>
+    <MDBNavbar light sticky expand="lg" bgColor="white" style={{ zIndex: 1, padding: 0 }}>
       <MDBContainer>
         <MDBNavbarBrand className="fs-3 mb-1" href="#">
           <NavLink to="/" className="text-dark">
             <img
-              src={Logo}
+              src={ElectricLogicLogo}
               width={125}
               height={100}
               alt="ELECTRIC LOGIC"
               title="ELECTRIC LOGIC"
-              style={{ width: "125px", height: "100px", objectFit: "cover" }}
+              style={{ width: "150px", height: "130px", objectFit: "cover" }}
             />
           </NavLink>
         </MDBNavbarBrand>

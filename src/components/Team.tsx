@@ -200,7 +200,7 @@ const Team = () => {
               data-builder-edit="text"
               data-builder-name="text15"
             >
-              Homrayev Sanjar
+              Hamrayev Sanjar
             </p>{" "}
             <p
               className="text-muted mb-0"
@@ -226,7 +226,7 @@ const Team = () => {
               data-builder-edit="text"
               data-builder-name="text17"
             >
-              Suvvonov Feruz
+              Suvonov Feruz
             </p>{" "}
             <p
               className="text-muted mb-0"
