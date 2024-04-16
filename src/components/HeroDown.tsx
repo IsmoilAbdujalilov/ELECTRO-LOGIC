@@ -14,7 +14,7 @@ const HeroDown = () => {
                 <h1 className="my-5 display-3 fw-bold ls-tight">
                   {" "}
                   <span data-builder-edit="text" data-builder-name="text1">
-                    The best offer on the market
+                    Добро пожаловать в
                   </span>{" "}
                   <br />{" "}
                   <span
@@ -22,7 +22,7 @@ const HeroDown = () => {
                     data-builder-edit="text"
                     data-builder-name="text2"
                   >
-                    for your business
+                    ЭЛЕКТРО ЛОГИК
                   </span>{" "}
                 </h1>{" "}
                 <button
@@ -31,7 +31,7 @@ const HeroDown = () => {
                   data-builder-name="button1"
                   aria-controls="#picker-editor"
                 >
-                  Welcome To Site
+                  Добро пожаловать на сайт
                 </button>{" "}
               </div>{" "}
             </div>{" "}

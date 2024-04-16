@@ -3,6 +3,7 @@ import Team from "./Team";
 import Price from "./Price";
 import Posts from "./Posts";
 import Loader from "./Loader";
+import Catalog from "./Catalog";
 import Products from "./Products";
 import HeroDown from "./HeroDown";
 import Questions from "./Questions";
@@ -17,6 +18,7 @@ export {
   Header,
   Loader,
   Footer,
+  Catalog,
   Products,
   HeroDown,
   Questions,

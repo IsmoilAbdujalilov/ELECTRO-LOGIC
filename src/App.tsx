@@ -34,7 +34,7 @@ const App = () => {
         },
         {
           element: <PostsView />,
-          path: "/pages/posts/:id",
+          path: "/pages/posts/:postName/:id",
         },
         {
           element: <Cart />,

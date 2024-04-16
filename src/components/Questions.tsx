@@ -25,14 +25,14 @@ const Questions = () => {
                   data-builder-edit="text"
                   data-builder-name="text1"
                 >
-                  Why is it so
+                  Почему вам стоит работать с
                 </span>
                 <u
                   className="text-primary"
                   data-builder-edit="text"
                   data-builder-name="text2"
                 >
-                  great?
+                  нами?
                 </u>{" "}
               </h2>{" "}
               <div className="row gx-lg-5">
@@ -41,56 +41,22 @@ const Questions = () => {
                   {" "}
                   <div className="p-3 bg-primary rounded-4 shadow-2-strong d-inline-block mb-4">
                     {" "}
-                    <i
-                      className="fas fa-headset fa-lg text-white fa-fw"
-                      data-builder-edit="icon"
-                      data-builder-name="icon1"
-                      aria-controls="#picker-editor"
-                    ></i>{" "}
+                    <i className="fas fa-handshake-angle text-white"></i>
                   </div>{" "}
                   <h5
                     className="fw-bold mb-3"
                     data-builder-edit="text"
                     data-builder-name="text3"
                   >
-                    Support 24/7
+                    Гарантия лучшей цены
                   </h5>{" "}
                   <p
                     className="text-muted mb-0"
                     data-builder-edit="text"
                     data-builder-name="text4"
                   >
-                    Laudantium totam quas cumque pariatur at doloremque hic quos
-                    quia eius. Reiciendis optio minus mollitia rerum labore
-                    facilis inventore voluptatem ad, quae quia sint. Ullam.
-                  </p>{" "}
-                </div>{" "}
-                <div className="col-md-4 mb-5 mb-md-0">
-                  {" "}
-                  <div className="p-3 bg-primary rounded-4 shadow-2-strong d-inline-block mb-4">
-                    {" "}
-                    <i
-                      className="fas fa-shield-alt fa-lg text-white fa-fw"
-                      data-builder-edit="icon"
-                      data-builder-name="icon2"
-                      aria-controls="#picker-editor"
-                    ></i>{" "}
-                  </div>{" "}
-                  <h5
-                    className="fw-bold mb-3"
-                    data-builder-edit="text"
-                    data-builder-name="text5"
-                  >
-                    Safe and solid
-                  </h5>{" "}
-                  <p
-                    className="text-muted mb-0"
-                    data-builder-edit="text"
-                    data-builder-name="text6"
-                  >
-                    Eum nostrum fugit numquam, voluptates veniam neque quibusdam
-                    ullam aspernatur odio soluta, quisquam dolore animi mollitia
-                    a omnis praesentium, expedita nobis!
+                    Самые профессиональные специалисты, проверенная временем
+                    продукция, качественные услуги
                   </p>{" "}
                 </div>{" "}
                 <div className="col-md-4 mb-5 mb-md-0">
@@ -107,18 +73,43 @@ const Questions = () => {
                   <h5
                     className="fw-bold mb-3"
                     data-builder-edit="text"
+                    data-builder-name="text5"
+                  >
+                    Отгрузка за 2 дня
+                  </h5>{" "}
+                  <p
+                    className="text-muted mb-0"
+                    data-builder-edit="text"
+                    data-builder-name="text6"
+                  >
+                    Доставка качественной продукции на максимальной скорости и в
+                    короткие сроки.
+                  </p>{" "}
+                </div>{" "}
+                <div className="col-md-4 mb-5 mb-md-0">
+                  {" "}
+                  <div className="p-3 bg-primary rounded-4 shadow-2-strong d-inline-block mb-4">
+                    {" "}
+                    <i
+                      className="fas fa-shield-alt fa-lg text-white fa-fw"
+                      data-builder-edit="icon"
+                      data-builder-name="icon2"
+                      aria-controls="#picker-editor"
+                    ></i>{" "}
+                  </div>{" "}
+                  <h5
+                    className="fw-bold mb-3"
+                    data-builder-edit="text"
                     data-builder-name="text7"
                   >
-                    Extremely fast
+                    Безопасная доставка
                   </h5>{" "}
                   <p
                     className="text-muted mb-0"
                     data-builder-edit="text"
                     data-builder-name="text8"
                   >
-                    Enim cupiditate, minus nulla dolor cumque iure eveniet
-                    facere ullam beatae hic voluptatibus dolores exercitationem?
-                    Facilis debitis aspernatur amet nisi?
+                    Все этапы доставки продукции сопровождаются экспертами.
                   </p>
                 </div>{" "}
               </div>{" "}

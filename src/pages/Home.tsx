@@ -2,9 +2,8 @@ import {
   Hero,
   Team,
   Posts,
-  Price,
+  Catalog,
   HeroDown,
-  Products,
   Questions,
   Testimonials,
 } from "../components";
@@ -16,10 +15,10 @@ const Home = () => {
       <HeroDown />
       <Questions />
       <Posts />
-      <Products />
-      <Price />
+      <Catalog />
+      {/* <Price /> */}
       <Team />
-      <Testimonials />
+      {/* <Testimonials /> */}
     </>
   );
 };

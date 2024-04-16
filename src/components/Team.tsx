@@ -1,18 +1,29 @@
+import { Posts3 } from "../assets/images/jpg";
+import {
+  Team1,
+  Team2,
+  Team3,
+  Team4,
+  Team5,
+  Team6,
+  Team7,
+} from "../assets/images/jpg";
+
 const Team = () => {
   return (
-    <section id="team" className="mb-10 text-center">
+    <section id="team" className="mb-10 text-center py-5">
       <div className="container">
         {" "}
         <h2 className="fw-bold mb-5">
           <span data-builder-edit="text" data-builder-name="text1">
-            Meet the
+            Познакомьтесь с нашей
           </span>{" "}
           <u
             className="text-primary"
             data-builder-edit="text"
             data-builder-name="text2"
           >
-            team
+            командой
           </u>
         </h2>{" "}
         <div className="row gx-lg-5">
@@ -20,10 +31,10 @@ const Team = () => {
           <div className="col-xl-3 col-md-4 mb-5">
             {" "}
             <img
-              src="https://mdbootstrap.com/img/new/avatars/2.jpg"
+              src={Posts3}
               className="rounded-circle shadow-4 mb-3"
               alt=""
-              style={{ maxWidth: "100px" }}
+              style={{ width: "100px", height: "100px", objectFit: "cover" }}
               data-builder-edit="image"
               data-builder-name="image1"
               aria-controls="#picker-editor"
@@ -33,49 +44,49 @@ const Team = () => {
               data-builder-edit="text"
               data-builder-name="text3"
             >
-              John Doe
+              Shavkat Maradjabov
             </p>{" "}
             <p
               className="text-muted mb-0"
               data-builder-edit="text"
               data-builder-name="text4"
             >
-              Co-founder
+              Главный инженер
             </p>{" "}
           </div>{" "}
           <div className="col-xl-3 col-md-4 mb-5">
             {" "}
             <img
-              src="https://mdbootstrap.com/img/new/avatars/5.jpg"
-              className="rounded-circle shadow-4 mb-3"
               alt=""
-              style={{ maxWidth: "100px" }}
+              src={Team1}
+              style={{ width: "100px", height: "100px", objectFit: "cover" }}
               data-builder-edit="image"
               data-builder-name="image2"
               aria-controls="#picker-editor"
+              className="rounded-circle shadow-4 mb-3"
             />{" "}
             <p
               className="fw-bold mb-1"
               data-builder-edit="text"
               data-builder-name="text5"
             >
-              Lisa Ferrol
+              Xo'djayev Xudoyberdi
             </p>{" "}
             <p
               className="text-muted mb-0"
               data-builder-edit="text"
               data-builder-name="text6"
             >
-              Web designer
+              Инженер-электроники и автоматизации
             </p>{" "}
           </div>{" "}
           <div className="col-xl-3 col-md-4 mb-5">
             {" "}
             <img
-              src="https://mdbootstrap.com/img/new/avatars/6.jpg"
+              src={Team2}
               className="rounded-circle shadow-4 mb-3"
               alt=""
-              style={{ maxWidth: "100px" }}
+              style={{ width: "100px", height: "100px", objectFit: "cover" }}
               data-builder-edit="image"
               data-builder-name="image3"
               aria-controls="#picker-editor"
@@ -85,23 +96,23 @@ const Team = () => {
               data-builder-edit="text"
               data-builder-name="text7"
             >
-              Maria Smith
+              Rahmatullayev Olmos
             </p>{" "}
             <p
               className="text-muted mb-0"
               data-builder-edit="text"
               data-builder-name="text8"
             >
-              Senior consultant
+              Инженер по электромонтажу
             </p>{" "}
           </div>{" "}
           <div className="col-xl-3 col-md-4 mb-5">
             {" "}
             <img
-              src="https://mdbootstrap.com/img/new/avatars/7.jpg"
+              src={Team3}
               className="rounded-circle shadow-4 mb-3"
               alt=""
-              style={{ maxWidth: "100px" }}
+              style={{ width: "100px", height: "100px", objectFit: "cover" }}
               data-builder-edit="image"
               data-builder-name="image4"
               aria-controls="#picker-editor"
@@ -111,23 +122,23 @@ const Team = () => {
               data-builder-edit="text"
               data-builder-name="text9"
             >
-              Agatha Bevos
+              Otaqulov Shaxboz
             </p>{" "}
             <p
               className="text-muted mb-0"
               data-builder-edit="text"
               data-builder-name="text10"
             >
-              Co-founder
+              Инженер ПТО
             </p>{" "}
           </div>{" "}
           <div className="col-xl-3 col-md-4 mb-5">
             {" "}
             <img
-              src="https://mdbootstrap.com/img/new/avatars/8.jpg"
+              src={Team4}
               className="rounded-circle shadow-4 mb-3"
               alt=""
-              style={{ maxWidth: "100px" }}
+              style={{ width: "100px", height: "100px", objectFit: "cover" }}
               data-builder-edit="image"
               data-builder-name="image5"
               aria-controls="#picker-editor"
@@ -137,23 +148,23 @@ const Team = () => {
               data-builder-edit="text"
               data-builder-name="text11"
             >
-              Darren Randolph
+              To'rayev Shovkat
             </p>{" "}
             <p
               className="text-muted mb-0"
               data-builder-edit="text"
               data-builder-name="text12"
             >
-              Marketing expert
+              Главный конструктор
             </p>{" "}
           </div>{" "}
           <div className="col-xl-3 col-md-4 mb-5">
             {" "}
             <img
-              src="https://mdbootstrap.com/img/new/avatars/9.jpg"
-              className="rounded-circle shadow-4 mb-3"
               alt=""
-              style={{ maxWidth: "100px" }}
+              src={Team5}
+              className="rounded-circle shadow-4 mb-3"
+              style={{ width: "100px", height: "100px", objectFit: "cover" }}
               data-builder-edit="image"
               data-builder-name="image6"
               aria-controls="#picker-editor"
@@ -163,23 +174,23 @@ const Team = () => {
               data-builder-edit="text"
               data-builder-name="text13"
             >
-              Soraya Letto
+              Shafir Ivan
             </p>{" "}
             <p
               className="text-muted mb-0"
               data-builder-edit="text"
               data-builder-name="text14"
             >
-              SEO expert
+              Менеджер по продажам
             </p>{" "}
           </div>{" "}
           <div className="col-xl-3 col-md-4 mb-5">
             {" "}
             <img
-              src="https://mdbootstrap.com/img/new/avatars/10.jpg"
+              src={Team6}
               className="rounded-circle shadow-4 mb-3"
               alt=""
-              style={{ maxWidth: "100px" }}
+              style={{ width: "100px", height: "100px", objectFit: "cover" }}
               data-builder-edit="image"
               data-builder-name="image7"
               aria-controls="#picker-editor"
@@ -189,23 +200,23 @@ const Team = () => {
               data-builder-edit="text"
               data-builder-name="text15"
             >
-              Maliha Welch
+              Homrayev Sanjar
             </p>{" "}
             <p
               className="text-muted mb-0"
               data-builder-edit="text"
               data-builder-name="text16"
             >
-              Web designer
+              Начальник группы монтажа электрощитов
             </p>{" "}
           </div>{" "}
           <div className="col-xl-3 col-md-4 mb-5">
             {" "}
             <img
-              src="https://mdbootstrap.com/img/new/avatars/11.jpg"
+              src={Team7}
               className="rounded-circle shadow-4 mb-3"
               alt=""
-              style={{ maxWidth: "100px" }}
+              style={{ width: "100px", height: "100px", objectFit: "cover" }}
               data-builder-edit="image"
               data-builder-name="image8"
               aria-controls="#picker-editor"
@@ -215,17 +226,17 @@ const Team = () => {
               data-builder-edit="text"
               data-builder-name="text17"
             >
-              Zeynep Dudley
+              Suvvonov Feruz
             </p>{" "}
             <p
               className="text-muted mb-0"
               data-builder-edit="text"
               data-builder-name="text18"
             >
-              Web developer
+              Смм и мобилограф
             </p>{" "}
           </div>{" "}
-          <div className="col-xl-3 col-md-4 mb-5">
+          {/* <div className="col-xl-3 col-md-4 mb-5">
             {" "}
             <img
               src="https://mdbootstrap.com/img/new/avatars/12.jpg"
@@ -326,7 +337,7 @@ const Team = () => {
             >
               Web designer
             </p>{" "}
-          </div>{" "}
+          </div>{" "} */}
         </div>{" "}
       </div>
     </section>

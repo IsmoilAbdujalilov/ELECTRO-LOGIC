@@ -47,47 +47,47 @@ export default function App() {
             <MDBNavbarItem>
               <MDBNavbarLink active aria-current="page">
                 <NavLink to="/" className="text-dark">
-                  Home
+                  Дом
                 </NavLink>
               </MDBNavbarLink>
             </MDBNavbarItem>
             <MDBNavbarItem>
               <MDBNavbarLink className="text-dark" href="#about">
-                About
+                О сайте
               </MDBNavbarLink>
             </MDBNavbarItem>
             <MDBNavbarItem>
               <MDBNavbarLink className="text-dark" href="#posts">
-                Posts
+                Пост
               </MDBNavbarLink>
             </MDBNavbarItem>
             <MDBNavbarItem>
               <MDBNavbarLink className="text-dark" href="#products">
-                Products
+                Продукты
               </MDBNavbarLink>
             </MDBNavbarItem>
-            <MDBNavbarItem>
+            {/* <MDBNavbarItem>
               <MDBNavbarLink className="text-dark" href="#price">
                 Price
               </MDBNavbarLink>
-            </MDBNavbarItem>
+            </MDBNavbarItem> */}
             <MDBNavbarItem>
               <MDBNavbarLink className="text-dark" href="#team">
-                Team
+                Команда
               </MDBNavbarLink>
             </MDBNavbarItem>
-            <MDBNavbarItem>
+            {/* <MDBNavbarItem>
               <MDBNavbarLink className="text-dark" href="#testimonials">
                 Testimonials
               </MDBNavbarLink>
-            </MDBNavbarItem>
-            <MDBNavbarItem>
+            </MDBNavbarItem> */}
+            {/* <MDBNavbarItem>
               <MDBNavbarLink>
                 <NavLink className="text-dark" to="/pages/contact">
                   Contact
                 </NavLink>
               </MDBNavbarLink>
-            </MDBNavbarItem>
+            </MDBNavbarItem> */}
           </MDBNavbarNav>
 
           <div className="d-flex gap-3 align-items-center">
@@ -109,18 +109,12 @@ export default function App() {
                     tag="a"
                     className="text-reset me-2 hidden-arrow"
                   >
-                    <img
-                      height="25"
-                      loading="lazy"
-                      className="rounded-circle"
-                      alt="Black and White Portrait of a Man"
-                      src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
-                    />
+                    Ismoil
                   </MDBDropdownToggle>
                   <MDBDropdownMenu>
-                    <Link className="text-dark" to="/pages/user">
+                    {/* <Link className="text-dark" to="/pages/user">
                       <MDBDropdownItem link>My profile</MDBDropdownItem>
-                    </Link>
+                    </Link> */}
                     <Link className="text-dark" to="/pages/login">
                       <MDBDropdownItem link>Logout</MDBDropdownItem>
                     </Link>
@@ -128,7 +122,7 @@ export default function App() {
                 </MDBDropdown>
               )}
             </div>
-            <div className="d-flex justify-content-center justify-content-md-end align-items-center">
+            {/* <div className="d-flex justify-content-center justify-content-md-end align-items-center">
               <MDBDropdown>
                 <MDBDropdownToggle tag="a" className="me-3 hidden-arrow icon">
                   <MDBIcon className="m-0" flag="uz" />
@@ -151,7 +145,7 @@ export default function App() {
                   </MDBDropdownItem>
                 </MDBDropdownMenu>
               </MDBDropdown>
-            </div>
+            </div> */}
             <div className="d-flex justify-content-center justify-content-md-end align-items-center">
               <MDBBtn
                 className="d-flex align-items-center"

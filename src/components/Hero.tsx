@@ -1,4 +1,6 @@
-function App() {
+import { BackgroundVideo } from "../assets/videos";
+
+const App = () => {
   return (
     <div id="intro" className="bg-image vh-100 shadow-1-strong">
       <video
@@ -8,11 +10,7 @@ function App() {
         muted
         loop
       >
-        <source
-          className="h-25"
-          src="https://mdbootstrap.com/img/video/Lines.mp4"
-          type="video/mp4"
-        />
+        <source className="h-25" src={BackgroundVideo} type="video/mp4" />
       </video>
       <div
         className="mask"
@@ -26,32 +24,23 @@ function App() {
       >
         <div className="container d-flex align-items-center justify-content-center text-center h-100">
           <div className="text-white" data-mdb-theme="dark">
-            <h1 className="mb-3">Learn Bootstrap 5 with MDB</h1>
-            <h5 className="mb-4">Best & free guide of responsive web design</h5>
-            <a
-              className="btn btn-outline-light btn-lg m-2"
-              data-mdb-ripple-init
-              href="https://www.youtube.com/watch?v=c9B4TPnak1A"
-              role="button"
-              rel="nofollow"
-              target="_blank"
+            <h1 className="mb-3 w-75 mx-auto">
+              Логическое решение в сфере электротехники, электромонтажных работ,
+              производство НКУ
+            </h1>
+            <p
+              className="w-50 mx-auto"
+              style={{ fontSize: "25px", lineHeight: "35px" }}
             >
-              Start tutorial
-            </a>
-            <a
-              className="btn btn-outline-light btn-lg m-2"
-              data-mdb-ripple-init
-              href="https://mdbootstrap.com/docs/standard/"
-              target="_blank"
-              role="button"
-            >
-              Download MDB UI KIT
-            </a>
+              Работаем с промышленными предприятиями, учреждениями в сфере
+              здравоохранения и сельского хозяйства, электро­монтажными и
+              строительными организациями
+            </p>
           </div>
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default App;
