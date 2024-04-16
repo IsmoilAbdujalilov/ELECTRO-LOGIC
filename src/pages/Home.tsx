@@ -1,12 +1,4 @@
-import {
-  Hero,
-  Team,
-  Posts,
-  Catalog,
-  HeroDown,
-  Questions,
-  Testimonials,
-} from "../components";
+import { Hero, Team, Posts, Catalog, HeroDown, Questions } from "../components";
 
 const Home = () => {
   return (
