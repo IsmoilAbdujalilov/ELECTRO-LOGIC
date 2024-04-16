@@ -17,6 +17,7 @@ import {
   MDBNavbarToggler,
   MDBDropdownToggle,
 } from "mdb-react-ui-kit";
+import { Logo } from "../../assets/images/png";
 
 export default function App() {
   const [isAuthUser, _] = useState<boolean>(false);
@@ -29,7 +30,14 @@ export default function App() {
       <MDBContainer>
         <MDBNavbarBrand className="fs-3 mb-1" href="#">
           <NavLink to="/" className="text-dark">
-            Logo
+            <img
+              src={Logo}
+              width={125}
+              height={100}
+              alt="ELECTRIC LOGIC"
+              title="ELECTRIC LOGIC"
+              style={{ width: "125px", height: "100px", objectFit: "cover" }}
+            />
           </NavLink>
         </MDBNavbarBrand>
         <MDBNavbarToggler
