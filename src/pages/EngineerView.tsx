@@ -10,7 +10,8 @@ const EngineerView = () => {
 
   const getOneEl = () => {
     let data: any = [];
-    const findData = engineer.map((el: any) => {
+    let findData;
+    findData = engineer.map((el: any) => {
       return el?.data.map((el: any) => {
         if (el?.id === Number(id)) {
           data.push(el);
