@@ -13,7 +13,7 @@ const EngineerView = () => {
   const dispatch = useDispatch();
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [storageData, setStorageData] = useState<any>(
-    JSON.parse(localStorage.getItem("data") as string)
+    JSON.parse(localStorage.getItem("data") as string) || []
   );
 
   const getOneEl = () => {
@@ -23,6 +23,7 @@ const EngineerView = () => {
         data.push(engineer[0]?.data[i]);
       }
     }
+    debugger;
 
     return data;
   };
