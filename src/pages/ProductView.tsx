@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { products } from "../data/products";
 
 const EngineerView = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [score, setScore] = useState<number>(1);
   const [oneElData, setOneElData] = useState([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
+  const { token } = JSON.parse(localStorage.getItem("token") as string) || {};
 
   const getOneEl = () => {
     const data = [];
@@ -33,6 +35,12 @@ const EngineerView = () => {
       setScore((score = 1));
     }
     setScore(score);
+  };
+
+  const handleClick = () => {
+    if (!token) {
+      navigate("/pages/login");
+    }
   };
 
   return (
@@ -141,6 +149,7 @@ const EngineerView = () => {
                     <div className="d-flex flex-column gap-2">
                       <div className="box">
                         <button
+                          onClick={() => handleClick()}
                           type="button"
                           className="btn btn-primary shadow-0 w-100"
                         >

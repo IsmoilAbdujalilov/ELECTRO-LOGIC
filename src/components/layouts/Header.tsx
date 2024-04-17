@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ElectricLogicLogo } from "../../assets/images/svg";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import {
   MDBBtn,
   MDBIcon,
@@ -20,10 +20,27 @@ import {
 } from "mdb-react-ui-kit";
 
 const Header = () => {
-  const [isAuthUser, _] = useState<boolean>(false);
   const [openNavText, setOpenNavText] = useState<boolean>(false);
+  const { token } = JSON.parse(localStorage.getItem("token") as string) || {};
+  const [saveEmail, __] = useState<{ email: string; token: string }>(
+    JSON.parse(localStorage.getItem("token") as string)
+  );
 
   const navigate = useNavigate();
+
+  const handleClick = () => {
+    if (!token) {
+      navigate("/pages/login");
+    } else {
+      setOpenNavText(false);
+      navigate("/pages/cart");
+    }
+  };
+
+  const logoutClick = () => {
+    navigate("/pages/login");
+    localStorage.clear();
+  };
 
   return (
     <MDBNavbar
@@ -144,7 +161,7 @@ const Header = () => {
 
           <div className="d-flex gap-3 align-items-center">
             <div className="d-flex justify-content-center justify-content-md-end align-items-center">
-              {isAuthUser ? (
+              {!token ? (
                 <MDBDropdown>
                   <MDBIcon
                     fas
@@ -161,12 +178,10 @@ const Header = () => {
                     tag="a"
                     className="text-reset me-2 hidden-arrow"
                   >
-                    Ismoil
+                    {saveEmail?.email.split("@gmail.com").join("")}
                   </MDBDropdownToggle>
-                  <MDBDropdownMenu>
-                    <Link to="/pages/login" className="text-dark">
-                      <MDBDropdownItem link>Logout</MDBDropdownItem>
-                    </Link>
+                  <MDBDropdownMenu onClick={() => logoutClick()}>
+                    <MDBDropdownItem link>Logout</MDBDropdownItem>
                   </MDBDropdownMenu>
                 </MDBDropdown>
               )}
@@ -198,10 +213,7 @@ const Header = () => {
             <div className="d-flex justify-content-center justify-content-md-end align-items-center">
               <MDBBtn
                 className="d-flex align-items-center"
-                onClick={() => {
-                  setOpenNavText(false);
-                  navigate("/pages/cart");
-                }}
+                onClick={() => handleClick()}
               >
                 <MDBIcon fas icon="shopping-cart" />
                 <MDBBadge className="bg-white text-primary ms-2">3</MDBBadge>

@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { engineer } from "../data/engineer";
 
 const EngineerView = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
+  const { token } = JSON.parse(localStorage.getItem("token") as string) || {};
   const [score, setScore] = useState<number>(1);
   const [oneElData, setOneElData] = useState([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -33,6 +35,12 @@ const EngineerView = () => {
       setScore((score = 1));
     }
     setScore(score);
+  };
+
+  const handleClick = () => {
+    if (!token) {
+      navigate("/pages/login");
+    }
   };
 
   return (
@@ -73,9 +81,7 @@ const EngineerView = () => {
                     </a>
                   </div>
                   <div className="row">
-                    <div className="col-2">
-
-                    </div>
+                    <div className="col-2"></div>
                   </div>
                   <div className="row gap-3">
                     {el?.images?.map((el: any) => {
@@ -146,6 +152,7 @@ const EngineerView = () => {
                       <div className="box">
                         <button
                           type="button"
+                          onClick={() => handleClick()}
                           className="btn btn-primary shadow-0 w-100"
                         >
                           <i className="me-1 fa fa-shopping-basket"></i> Add to

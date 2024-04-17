@@ -1,8 +1,51 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { doc, setDoc } from "firebase/firestore";
+import { auth, db } from "../../firebaseConfig";
+import { Link, useNavigate } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
+import { signInWithEmailAndPassword } from "firebase/auth";
 
 const Registration = () => {
+  const navigate = useNavigate();
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+
+  const submitData = async (e: any) => {
+    e.preventDefault();
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+      const user: any = auth.currentUser;
+      localStorage.setItem(
+        "token",
+        JSON.stringify({
+          email,
+          token: user?.stsTokenManager.accessToken,
+        })
+      );
+      navigate("/");
+      if (user) {
+        await setDoc(doc(db, "users", user.uid), {
+          email: user.email,
+        });
+      }
+      toast.success("Вы вошли в систему", {
+        autoClose: 2000,
+        draggable: true,
+        pauseOnHover: false,
+        position: "top-right",
+      });
+    } catch (error) {
+      toast.error("Вы не смогли войти", {
+        autoClose: 2000,
+        draggable: true,
+        pauseOnHover: false,
+        position: "top-right",
+      });
+    }
+  };
   return (
     <section className="login-background">
+      <ToastContainer />
       <div className="container registration d-flex align-items-center justify-content-center">
         <div className="card auth-card">
           <div className="card-body p-4">
@@ -32,7 +75,7 @@ const Registration = () => {
                 aria-labelledby="tab-login"
                 className="tab-pane fade show active"
               >
-                <form>
+                <form onSubmit={(e) => submitData(e)}>
                   <div className="text-center mb-3">
                     <p>Sign in with:</p>
                     <button
@@ -51,39 +94,35 @@ const Registration = () => {
                     </button>
                   </div>
                   <p className="text-center">or:</p>
+                  <label htmlFor="email">Email</label>
                   <div className="form-outline">
                     <input
                       id="email"
                       type="email"
+                      value={email}
                       className="form-control mb-4"
+                      onChange={(e) => setEmail(e.target.value)}
                     />
-                    <label className="form-label" htmlFor="email">
-                      Email
-                    </label>
                     <div className="form-notch">
                       <div className="form-notch-leading"></div>
-                      <div
-                        style={{ width: "40px" }}
-                        className="form-notch-middle"
-                      ></div>
+                      <div className="form-notch-middle"></div>
                       <div className="form-notch-trailing"></div>
                     </div>
                   </div>
+                  <label className="form-label" htmlFor="loginPassword">
+                    Password
+                  </label>
                   <div className="form-outline">
                     <input
                       type="password"
+                      value={password}
                       id="loginPassword"
                       className="form-control mb-4"
+                      onChange={(e) => setPassword(e.target.value)}
                     />
-                    <label className="form-label" htmlFor="loginPassword">
-                      Password
-                    </label>
                     <div className="form-notch">
                       <div className="form-notch-leading"></div>
-                      <div
-                        style={{ width: "64px" }}
-                        className="form-notch-middle"
-                      ></div>
+                      <div className="form-notch-middle"></div>
                       <div className="form-notch-trailing"></div>
                     </div>
                   </div>
