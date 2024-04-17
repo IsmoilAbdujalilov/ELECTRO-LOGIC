@@ -43,10 +43,10 @@ const EngineerProducts = () => {
                   <div className="col-md-6 col-lg-4 mb-4 mb-md-0">
                     <Link
                       to={`/pages/engineer-products/${catalogTitle}/${catalogName}/${el.id}`}
-                      className="card"
+                      className="card mb-4 px-3"
                     >
-                      <div className="d-flex justify-content-between p-3">
-                        <p className="lead mb-0">
+                      <div className="d-flex justify-content-between p-3 align-items-center">
+                        <p className="lead mb-0" style={{fontSize: "18px"}}>
                           Сегодняшнее комбо-предложение
                         </p>
                         <div
@@ -63,13 +63,15 @@ const EngineerProducts = () => {
                         </div>
                       </div>
                       <img
+                        height={325}
+                        style={{ width: "100%" }}
                         src={el.image}
                         className="card-img-top"
                         alt="Gaming Laptop"
                       />
                       <div className="card-body">
                         <div className="d-flex justify-content-between mb-3">
-                          <h5 className="mb-0">{el.title}</h5>
+                          <h5 className="mb-0" style={{width: "60%"}}>{el.title}</h5>
                           <h5 className="text-dark mb-0">{el.price} ₽</h5>
                         </div>
                       </div>

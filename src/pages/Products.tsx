@@ -12,7 +12,7 @@ const Products = () => {
             return (
               <Link
                 to={`/pages/product/${path}`}
-                className="list-group-item d-flex justify-content-between align-items-center"
+                className="list-group-item border p-2 d-flex justify-content-between align-items-center"
               >
                 {el.name}
                 <span className="badge badge-primary rounded-pill">20</span>

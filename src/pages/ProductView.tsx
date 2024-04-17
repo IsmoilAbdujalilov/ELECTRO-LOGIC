@@ -9,13 +9,14 @@ const EngineerView = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   const getOneEl = () => {
-    return products.map((el: any) => {
-      return el?.data.map((el: any) => {
-        if (el?.id === Number(id)) {
-          return el;
-        }
-      });
-    });
+    const data = [];
+    for (let i = 0; i < products[0]?.data?.length; i++) {
+      if (products[0]?.data[i]?.id === Number(id)) {
+        data.push(products[0]?.data[i]);
+      }
+    }
+
+    return data;
   };
 
   const data: any = getOneEl().flat();
@@ -24,7 +25,7 @@ const EngineerView = () => {
     setTimeout(() => {
       setOneElData(data);
       setIsLoading(false);
-    }, 1000);
+    }, 500);
   }, [id]);
 
   const incAndDecrCount = (score: any) => {
@@ -45,7 +46,7 @@ const EngineerView = () => {
           </div>
         ) : (
           oneElData?.length > 0 &&
-          oneElData.map((el: any) => {
+          oneElData?.map((el: any) => {
             console.log(el);
             return (
               <div className="row gx-5">
@@ -60,7 +61,7 @@ const EngineerView = () => {
                       <img
                         width="100%"
                         height={500}
-                        src={el.image}
+                        src={el?.image}
                         style={{
                           width: "100%",
                           objectFit: "cover",
@@ -72,29 +73,30 @@ const EngineerView = () => {
                     </a>
                   </div>
                   <div className="d-flex justify-content-center mb-3">
-                    {el?.images?.map((el: any) => {
-                      return (
-                        <a
-                          key={el.id}
-                          href={el.img}
-                          data-type="image"
-                          data-fslightbox="mygalley"
-                          className="border mx-1 rounded-2"
-                        >
-                          <img
-                            width="60"
-                            height="60"
-                            src={el.img}
-                            className="rounded-2"
-                          />
-                        </a>
-                      );
-                    })}
+                    {el?.images.length > 0 &&
+                      el?.images?.map((el: any) => {
+                        return (
+                          <a
+                            key={el.id}
+                            href={el.img}
+                            data-type="image"
+                            data-fslightbox="mygalley"
+                            className="border mx-1 rounded-2"
+                          >
+                            <img
+                              width="60"
+                              height="60"
+                              src={el.img}
+                              className="rounded-2"
+                            />
+                          </a>
+                        );
+                      })}
                   </div>
                 </aside>
                 <main className="col-lg-6">
                   <div className="ps-lg-3">
-                    <h4 className="title text-dark">{el.title}</h4>
+                    <h4 className="title text-dark">{el?.title}</h4>
 
                     <hr />
 
@@ -132,7 +134,7 @@ const EngineerView = () => {
                           </button>
                         </div>
                         <div className="mb-3">
-                          <span className="h5">Цена: {el.price} ₽</span>
+                          <span className="h5">Цена: {el?.price} ₽</span>
                         </div>
                       </div>
                     </div>

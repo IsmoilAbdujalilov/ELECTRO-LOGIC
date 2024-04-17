@@ -31,7 +31,7 @@ const Header = () => {
       sticky
       expand="lg"
       bgColor="white"
-      style={{ zIndex: 1, padding: 0 }}
+      style={{ zIndex: 3, padding: 0 }}
     >
       <MDBContainer>
         <MDBNavbarBrand className="fs-3 mb-1" href="#">

@@ -9,16 +9,17 @@ const EngineerView = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   const getOneEl = () => {
-    return engineer.map((el: any) => {
-      return el?.data.map((el: any) => {
-        if (el?.id === Number(id)) {
-          return el;
-        }
-      });
-    });
+    const data = [];
+    for (let i = 0; i < engineer[0]?.data?.length; i++) {
+      if (engineer[0]?.data[i]?.id === Number(id)) {
+        data.push(engineer[0]?.data[i]);
+      }
+    }
+
+    return data;
   };
 
-  const data: any = getOneEl().flat();
+  const data: any = getOneEl()?.flat();
 
   useEffect(() => {
     setTimeout(() => {
@@ -71,7 +72,12 @@ const EngineerView = () => {
                       />
                     </a>
                   </div>
-                  <div className="d-flex justify-content-center mb-3">
+                  <div className="row">
+                    <div className="col-2">
+
+                    </div>
+                  </div>
+                  <div className="row gap-3">
                     {el?.images?.map((el: any) => {
                       return (
                         <a
@@ -79,7 +85,7 @@ const EngineerView = () => {
                           href={el.img}
                           data-type="image"
                           data-fslightbox="mygalley"
-                          className="border mx-1 rounded-2"
+                          className="col-1 rounded-2"
                         >
                           <img
                             width="60"

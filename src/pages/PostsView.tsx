@@ -23,7 +23,7 @@ const PostsView = () => {
     setTimeout(() => {
       const fetchData = () => {
         return new Promise((resolve, reject) => {
-          return posts.filter((el: typePosts) => {
+          return posts.find((el: typePosts) => {
             if (el.id === Number(id)) {
               resolve(el);
               setPostData([el]);
@@ -41,7 +41,7 @@ const PostsView = () => {
         .finally(() => {
           setIsLoading(false);
         });
-    }, 1000);
+    }, 500);
   }, [id]);
 
   return (
@@ -71,7 +71,7 @@ const PostsView = () => {
                   <section className="mb-10">
                     {" "}
                     <img
-                      src={el.image}
+                      src={el?.image}
                       className="img-fluid shadow-1-strong rounded-5 mb-4"
                       alt=""
                       data-builder-edit="image"

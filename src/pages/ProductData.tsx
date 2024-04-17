@@ -19,10 +19,8 @@ const ProductData = () => {
     setTimeout(() => {
       oneEngineerView();
       setIsLoading(false);
-    }, 1000);
+    }, 500);
   }, [productId]);
-
-  console.log(engineerData);
 
   return (
     <section id="products" style={{ backgroundColor: "#eee" }}>
@@ -65,9 +63,9 @@ const ProductData = () => {
                         </div>
                       </div>
                       <img
-                        src={el.image}
-                        className="card-img-top"
+                        src={el?.image}
                         alt="Gaming Laptop"
+                        className="card-img-top"
                       />
                       <div className="card-body">
                         <div className="d-flex justify-content-between mb-3">
