@@ -23,7 +23,6 @@ const EngineerView = () => {
         data.push(engineer[0]?.data[i]);
       }
     }
-    debugger;
 
     return data;
   };
