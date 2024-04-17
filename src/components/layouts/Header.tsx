@@ -17,7 +17,6 @@ import {
   MDBNavbarToggler,
   MDBDropdownToggle,
 } from "mdb-react-ui-kit";
-import { Logo } from "../../assets/images/png";
 import { ElectricLogicLogo } from "../../assets/images/svg";
 
 export default function App() {
@@ -27,7 +26,13 @@ export default function App() {
   const navigate = useNavigate();
 
   return (
-    <MDBNavbar light sticky expand="lg" bgColor="white" style={{ zIndex: 1, padding: 0 }}>
+    <MDBNavbar
+      light
+      sticky
+      expand="lg"
+      bgColor="white"
+      style={{ zIndex: 1, padding: 0 }}
+    >
       <MDBContainer>
         <MDBNavbarBrand className="fs-3 mb-1" href="#">
           <NavLink to="/" className="text-dark">

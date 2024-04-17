@@ -44,7 +44,7 @@ const Team = () => {
               data-builder-edit="text"
               data-builder-name="text3"
             >
-              Shavkat Maradjabov
+              Шавкат Мараджабов
             </p>{" "}
             <p
               className="text-muted mb-0"
@@ -70,7 +70,7 @@ const Team = () => {
               data-builder-edit="text"
               data-builder-name="text5"
             >
-              Xo'djayev Xudoyberdi
+              Ходжаев Худойберди
             </p>{" "}
             <p
               className="text-muted mb-0"
@@ -96,7 +96,7 @@ const Team = () => {
               data-builder-edit="text"
               data-builder-name="text7"
             >
-              Rahmatullayev Olmos
+              Рахматуллаев Алмас
             </p>{" "}
             <p
               className="text-muted mb-0"
@@ -122,7 +122,7 @@ const Team = () => {
               data-builder-edit="text"
               data-builder-name="text9"
             >
-              Otaqulov Shaxboz
+              Отакулов Шахбоз
             </p>{" "}
             <p
               className="text-muted mb-0"
@@ -148,7 +148,7 @@ const Team = () => {
               data-builder-edit="text"
               data-builder-name="text11"
             >
-              To'rayev Shovkat
+              Тораев Шавкат
             </p>{" "}
             <p
               className="text-muted mb-0"
@@ -174,7 +174,7 @@ const Team = () => {
               data-builder-edit="text"
               data-builder-name="text13"
             >
-              Shafir Ivan
+              Шафир Иван
             </p>{" "}
             <p
               className="text-muted mb-0"
@@ -200,7 +200,7 @@ const Team = () => {
               data-builder-edit="text"
               data-builder-name="text15"
             >
-              Hamrayev Sanjar
+              Хамраев Санджар
             </p>{" "}
             <p
               className="text-muted mb-0"
@@ -226,7 +226,7 @@ const Team = () => {
               data-builder-edit="text"
               data-builder-name="text17"
             >
-              Suvonov Feruz
+              Суванов Феруз
             </p>{" "}
             <p
               className="text-muted mb-0"
@@ -234,111 +234,9 @@ const Team = () => {
               data-builder-name="text18"
             >
               Смм и мобилограф
-            </p>{" "}
-          </div>{" "}
-          {/* <div className="col-xl-3 col-md-4 mb-5">
-            {" "}
-            <img
-              src="https://mdbootstrap.com/img/new/avatars/12.jpg"
-              className="rounded-circle shadow-4 mb-3"
-              alt=""
-              style={{ maxWidth: "100px" }}
-              data-builder-edit="image"
-              data-builder-name="image9"
-              aria-controls="#picker-editor"
-            />{" "}
-            <p
-              className="fw-bold mb-1"
-              data-builder-edit="text"
-              data-builder-name="text19"
-            >
-              Avaya Hills
-            </p>{" "}
-            <p
-              className="text-muted mb-0"
-              data-builder-edit="text"
-              data-builder-name="text20"
-            >
-              Copywritter
-            </p>{" "}
-          </div>{" "}
-          <div className="col-xl-3 col-md-4 mb-5">
-            {" "}
-            <img
-              src="https://mdbootstrap.com/img/new/avatars/13.jpg"
-              className="rounded-circle shadow-4 mb-3"
-              alt=""
-              style={{ maxWidth: "100px" }}
-              data-builder-edit="image"
-              data-builder-name="image10"
-              aria-controls="#picker-editor"
-            />{" "}
-            <p
-              className="fw-bold mb-1"
-              data-builder-edit="text"
-              data-builder-name="text21"
-            >
-              Thierry Fischer
-            </p>{" "}
-            <p
-              className="text-muted mb-0"
-              data-builder-edit="text"
-              data-builder-name="text22"
-            >
-              Senior consultant
-            </p>{" "}
-          </div>{" "}
-          <div className="col-xl-3 col-md-4 mb-5">
-            {" "}
-            <img
-              src="https://mdbootstrap.com/img/new/avatars/14.jpg"
-              className="rounded-circle shadow-4 mb-3"
-              alt=""
-              style={{ maxWidth: "100px" }}
-              data-builder-edit="image"
-              data-builder-name="image11"
-              aria-controls="#picker-editor"
-            />{" "}
-            <p
-              className="fw-bold mb-1"
-              data-builder-edit="text"
-              data-builder-name="text23"
-            >
-              Aisling Sheldon
-            </p>{" "}
-            <p
-              className="text-muted mb-0"
-              data-builder-edit="text"
-              data-builder-name="text24"
-            >
-              Senior developer
-            </p>{" "}
-          </div>{" "}
-          <div className="col-xl-3 col-md-4 mb-5">
-            <img
-              src="https://mdbootstrap.com/img/new/avatars/15.jpg"
-              className="rounded-circle shadow-4 mb-3"
-              data-builder-edit="image"
-              data-builder-name="image12"
-              aria-controls="#picker-editor"
-              style={{ maxWidth: "100px" }}
-            />{" "}
-            <p
-              className="fw-bold mb-1"
-              data-builder-edit="text"
-              data-builder-name="text25"
-            >
-              Ayat Black
-            </p>{" "}
-            <p
-              className="text-muted mb-0"
-              data-builder-edit="text"
-              data-builder-name="text26"
-            >
-              Web designer
-            </p>{" "}
-          </div>{" "} */}
-        </div>{" "}
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   );
