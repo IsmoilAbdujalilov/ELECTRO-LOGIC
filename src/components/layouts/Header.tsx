@@ -18,6 +18,7 @@ import {
   MDBNavbarToggler,
   MDBDropdownToggle,
 } from "mdb-react-ui-kit";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const [openNavText, setOpenNavText] = useState<boolean>(false);
@@ -41,6 +42,9 @@ const Header = () => {
     navigate("/pages/login");
     localStorage.clear();
   };
+
+  const state = useSelector((state: any) => state.reducer.data);
+  console.log(state);
 
   return (
     <MDBNavbar
@@ -216,7 +220,9 @@ const Header = () => {
                 onClick={() => handleClick()}
               >
                 <MDBIcon fas icon="shopping-cart" />
-                <MDBBadge className="bg-white text-primary ms-2">3</MDBBadge>
+                <MDBBadge className="bg-white text-primary ms-2">
+                  {state.length}
+                </MDBBadge>
                 <span className="visually-hidden">unread messages</span>
               </MDBBtn>
             </div>

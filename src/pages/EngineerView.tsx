@@ -1,14 +1,21 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { engineer } from "../data/engineer";
+import { useDispatch, useSelector } from "react-redux";
+import { GET_DATAS } from "../store/actions";
 
 const EngineerView = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const { token } = JSON.parse(localStorage.getItem("token") as string) || {};
-  const [score, setScore] = useState<number>(1);
+  // const [score, setScore] = useState<number>(0);
   const [oneElData, setOneElData] = useState([]);
+  const dispatch = useDispatch();
   const [isLoading, setIsLoading] = useState<boolean>(true);
+  const state = useSelector((state: any) => state.reducer.data);
+  const [storageData, setStorageData] = useState<any>(
+    JSON.parse(localStorage.getItem("data") as string)
+  );
 
   const getOneEl = () => {
     const data = [];
@@ -30,18 +37,23 @@ const EngineerView = () => {
     }, 1000);
   }, [id]);
 
-  const incAndDecrCount = (score: any) => {
-    if (score < 1) {
-      setScore((score = 1));
-    }
-    setScore(score);
-  };
+  // const incAndDecrCount = (score: any) => {
+  //   if (score < 1) {
+  //     setScore((score = 0));
+  //   }
+  //   setScore(score);
+  // };
 
-  const handleClick = () => {
+  const handleClick = (data: any) => {
     if (!token) {
       navigate("/pages/login");
+    } else {
+      setStorageData([...storageData, data]);
+      dispatch(GET_DATAS(data));
     }
   };
+
+  localStorage.setItem("data", JSON.stringify(storageData));
 
   return (
     <section className="py-5">
@@ -55,7 +67,6 @@ const EngineerView = () => {
         ) : (
           oneElData.length > 0 &&
           oneElData.map((el: any) => {
-            console.log(el);
             return (
               <div className="row gx-5">
                 <aside className="col-lg-6">
@@ -112,7 +123,7 @@ const EngineerView = () => {
 
                     <div className="row mb-4">
                       <div className="col-md-4 col-6 mb-3">
-                        <label className="mb-2 d-block">Quantity</label>
+                        {/* <label className="mb-2 d-block">Quantity</label>
                         <div
                           className="input-group mb-3"
                           style={{ width: "170px" }}
@@ -142,7 +153,7 @@ const EngineerView = () => {
                           >
                             <i className="fas fa-plus"></i>
                           </button>
-                        </div>
+                        </div> */}
                         <div className="mb-3">
                           <span className="h5">Цена: {el.price} ₽</span>
                         </div>
@@ -152,7 +163,7 @@ const EngineerView = () => {
                       <div className="box">
                         <button
                           type="button"
-                          onClick={() => handleClick()}
+                          onClick={() => handleClick(el)}
                           className="btn btn-primary shadow-0 w-100"
                         >
                           <i className="me-1 fa fa-shopping-basket"></i> Add to
