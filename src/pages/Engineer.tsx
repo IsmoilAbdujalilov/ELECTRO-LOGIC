@@ -1,11 +1,11 @@
 import { v4 as uuid } from "uuid";
 import { Link } from "react-router-dom";
 
-const Catalog = () => {
+const Engineer = () => {
   return (
-    <section className="catalog">
+    <section className="catalog py-5">
       <div className="catalog-container container">
-        <h2 className="text-center mb-5">Каталог</h2>
+        <h2 className="text-center mb-5">Инженер</h2>
         <ul className="list-group list-group-light">
           <Link
             to={`/pages/catalog/Комплектные-распределительные-устройства-типа-КРУ-0,4-kV/${uuid()}`}
@@ -169,4 +169,4 @@ const Catalog = () => {
   );
 };
 
-export default Catalog;
+export default Engineer;

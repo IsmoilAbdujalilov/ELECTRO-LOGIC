@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { ElectricLogicLogo } from "../../assets/images/svg";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import {
   MDBBtn,
@@ -17,9 +18,8 @@ import {
   MDBNavbarToggler,
   MDBDropdownToggle,
 } from "mdb-react-ui-kit";
-import { ElectricLogicLogo } from "../../assets/images/svg";
 
-export default function App() {
+const Header = () => {
   const [isAuthUser, _] = useState<boolean>(false);
   const [openNavText, setOpenNavText] = useState<boolean>(false);
 
@@ -35,7 +35,11 @@ export default function App() {
     >
       <MDBContainer>
         <MDBNavbarBrand className="fs-3 mb-1" href="#">
-          <NavLink to="/" className="text-dark">
+          <NavLink
+            onClick={() => setOpenNavText(false)}
+            to="/"
+            className="text-dark"
+          >
             <img
               src={ElectricLogicLogo}
               width={125}
@@ -59,49 +63,83 @@ export default function App() {
         <MDBCollapse navbar open={openNavText}>
           <MDBNavbarNav className="mr-auto mb-2 mb-lg-0">
             <MDBNavbarItem>
-              <MDBNavbarLink active aria-current="page">
-                <NavLink to="/" className="text-dark">
+              <MDBNavbarLink>
+                <NavLink
+                  onClick={() => setOpenNavText(false)}
+                  className={({ isActive }) =>
+                    isActive ? "text-primary" : "text-dark"
+                  }
+                  to="/"
+                >
                   Дом
                 </NavLink>
               </MDBNavbarLink>
             </MDBNavbarItem>
             <MDBNavbarItem>
-              <MDBNavbarLink className="text-dark" href="#about">
-                О сайте
-              </MDBNavbarLink>
-            </MDBNavbarItem>
-            <MDBNavbarItem>
-              <MDBNavbarLink className="text-dark" href="#posts">
-                Пост
-              </MDBNavbarLink>
-            </MDBNavbarItem>
-            <MDBNavbarItem>
-              <MDBNavbarLink className="text-dark" href="#products">
-                Продукты
-              </MDBNavbarLink>
-            </MDBNavbarItem>
-            {/* <MDBNavbarItem>
-              <MDBNavbarLink className="text-dark" href="#price">
-                Price
-              </MDBNavbarLink>
-            </MDBNavbarItem> */}
-            <MDBNavbarItem>
-              <MDBNavbarLink className="text-dark" href="#team">
-                Команда
-              </MDBNavbarLink>
-            </MDBNavbarItem>
-            {/* <MDBNavbarItem>
-              <MDBNavbarLink className="text-dark" href="#testimonials">
-                Testimonials
-              </MDBNavbarLink>
-            </MDBNavbarItem> */}
-            {/* <MDBNavbarItem>
               <MDBNavbarLink>
-                <NavLink className="text-dark" to="/pages/contact">
-                  Contact
+                <NavLink
+                  onClick={() => setOpenNavText(false)}
+                  className={({ isActive }) =>
+                    isActive ? "text-primary" : "text-dark"
+                  }
+                  to="/pages/about"
+                >
+                  О сайте
                 </NavLink>
               </MDBNavbarLink>
-            </MDBNavbarItem> */}
+            </MDBNavbarItem>
+            <MDBNavbarItem>
+              <MDBNavbarLink>
+                <NavLink
+                  onClick={() => setOpenNavText(false)}
+                  className={({ isActive }) =>
+                    isActive ? "text-primary" : "text-dark"
+                  }
+                  to="/pages/posts"
+                >
+                  Пост
+                </NavLink>
+              </MDBNavbarLink>
+            </MDBNavbarItem>
+            <MDBNavbarItem>
+              <MDBNavbarLink>
+                <NavLink
+                  onClick={() => setOpenNavText(false)}
+                  className={({ isActive }) =>
+                    isActive ? "text-primary" : "text-dark"
+                  }
+                  to="/pages/team"
+                >
+                  Команда
+                </NavLink>
+              </MDBNavbarLink>
+            </MDBNavbarItem>
+            <MDBNavbarItem>
+              <MDBNavbarLink>
+                <NavLink
+                  to="/pages/engineer"
+                  onClick={() => setOpenNavText(false)}
+                  className={({ isActive }) =>
+                    isActive ? "text-primary" : "text-dark"
+                  }
+                >
+                  Инжиниринг
+                </NavLink>
+              </MDBNavbarLink>
+            </MDBNavbarItem>
+            <MDBNavbarLink>
+              <MDBNavbarItem>
+                <NavLink
+                  to="/pages/product"
+                  onClick={() => setOpenNavText(false)}
+                  className={({ isActive }) =>
+                    isActive ? "text-primary" : "text-dark"
+                  }
+                >
+                  Продукты
+                </NavLink>
+              </MDBNavbarItem>
+            </MDBNavbarLink>
           </MDBNavbarNav>
 
           <div className="d-flex gap-3 align-items-center">
@@ -126,10 +164,7 @@ export default function App() {
                     Ismoil
                   </MDBDropdownToggle>
                   <MDBDropdownMenu>
-                    {/* <Link className="text-dark" to="/pages/user">
-                      <MDBDropdownItem link>My profile</MDBDropdownItem>
-                    </Link> */}
-                    <Link className="text-dark" to="/pages/login">
+                    <Link to="/pages/login" className="text-dark">
                       <MDBDropdownItem link>Logout</MDBDropdownItem>
                     </Link>
                   </MDBDropdownMenu>
@@ -163,7 +198,10 @@ export default function App() {
             <div className="d-flex justify-content-center justify-content-md-end align-items-center">
               <MDBBtn
                 className="d-flex align-items-center"
-                onClick={() => navigate("/pages/cart")}
+                onClick={() => {
+                  setOpenNavText(false);
+                  navigate("/pages/cart");
+                }}
               >
                 <MDBIcon fas icon="shopping-cart" />
                 <MDBBadge className="bg-white text-primary ms-2">3</MDBBadge>
@@ -191,4 +229,6 @@ export default function App() {
       </MDBContainer>
     </MDBNavbar>
   );
-}
+};
+
+export default Header;

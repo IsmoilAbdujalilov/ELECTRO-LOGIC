@@ -1,6 +1,6 @@
 import lodash from "lodash";
-import { Link } from "react-router-dom";
 import { posts } from "../data/posts";
+import { Link } from "react-router-dom";
 
 const Posts = () => {
   type typePosts = {
@@ -14,7 +14,7 @@ const Posts = () => {
   };
 
   return (
-    <div className="mdb-col-lg-8 mdb-h-100" id="posts">
+    <div className="mdb-col-lg-8 mdb-h-100 py-5" id="posts">
       <div className="container">
         <h2 className="text-center">Последние статьи</h2>
         <div

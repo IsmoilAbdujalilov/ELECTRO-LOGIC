@@ -5,7 +5,9 @@ const Routes = () => {
   return (
     <>
       <Header />
-      <Outlet />
+      <main style={{ minHeight: "calc(100vh - 510px)" }}>
+        <Outlet />
+      </main>
       <Footer />
     </>
   );

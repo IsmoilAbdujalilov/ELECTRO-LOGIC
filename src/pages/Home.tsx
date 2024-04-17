@@ -1,16 +1,10 @@
-import { Hero, Team, Posts, Catalog, HeroDown, Questions } from "../components";
+import { Hero, HeroDown } from "../components";
 
 const Home = () => {
   return (
     <>
       <Hero />
       <HeroDown />
-      <Questions />
-      <Posts />
-      <Catalog />
-      {/* <Price /> */}
-      <Team />
-      {/* <Testimonials /> */}
     </>
   );
 };

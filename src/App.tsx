@@ -4,15 +4,20 @@ import { lazy, Suspense } from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 const App = () => {
+  const Cart = lazy(() => import("./pages/Cart"));
   const Home = lazy(() => import("./pages/Home"));
   const User = lazy(() => import("./pages/User"));
+  const Team = lazy(() => import("./pages/Team"));
   const Error = lazy(() => import("./pages/Error"));
   const Login = lazy(() => import("./pages/Login"));
-  const Cart = lazy(() => import("./pages/Cart.tsx"));
+  const About = lazy(() => import("./pages/About"));
+  const Posts = lazy(() => import("./pages/Posts"));
   const Contact = lazy(() => import("./pages/Contact"));
+  const Products = lazy(() => import("./pages/Products"));
+  const Engineer = lazy(() => import("./pages/Engineer"));
   const PostsView = lazy(() => import("./pages/PostsView"));
+  const ProductView = lazy(() => import("./pages/ProductView"));
   const Registration = lazy(() => import("./pages/Registration"));
-  const ProductView = lazy(() => import("./pages/ProductView.tsx"));
   const ForgotPassword = lazy(() => import("./pages/ForgotPassword"));
 
   const routers = createBrowserRouter([
@@ -33,6 +38,10 @@ const App = () => {
           path: "/pages/contact",
         },
         {
+          element: <Posts />,
+          path: "/pages/posts",
+        },
+        {
           element: <PostsView />,
           path: "/pages/posts/:postName/:id",
         },
@@ -43,6 +52,22 @@ const App = () => {
         {
           element: <ProductView />,
           path: "/pages/productview/:id",
+        },
+        {
+          element: <About />,
+          path: "/pages/about",
+        },
+        {
+          element: <Team />,
+          path: "/pages/team",
+        },
+        {
+          element: <Engineer />,
+          path: "/pages/engineer",
+        },
+        {
+          element: <Products />,
+          path: "/pages/product",
         },
       ],
     },
