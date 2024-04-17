@@ -16,9 +16,12 @@ const App = () => {
   const Products = lazy(() => import("./pages/Products"));
   const Engineer = lazy(() => import("./pages/Engineer"));
   const PostsView = lazy(() => import("./pages/PostsView"));
+  const ProductData = lazy(() => import("./pages/ProductData"));
   const ProductView = lazy(() => import("./pages/ProductView"));
   const Registration = lazy(() => import("./pages/Registration"));
+  const EngineerView = lazy(() => import("./pages/EngineerView"));
   const ForgotPassword = lazy(() => import("./pages/ForgotPassword"));
+  const EngineerProducts = lazy(() => import("./pages/EngineerProducts"));
 
   const routers = createBrowserRouter([
     {
@@ -40,6 +43,14 @@ const App = () => {
         {
           element: <Posts />,
           path: "/pages/posts",
+        },
+        {
+          element: <EngineerProducts />,
+          path: "/pages/engineer-products/:productName/:productId",
+        },
+        {
+          element: <EngineerView />,
+          path: "/pages/engineer-products/:productName/:productTitle/:id",
         },
         {
           element: <PostsView />,
@@ -68,6 +79,14 @@ const App = () => {
         {
           element: <Products />,
           path: "/pages/product",
+        },
+        {
+          element: <ProductData />,
+          path: "/pages/product/:productName/:productId",
+        },
+        {
+          element: <ProductView />,
+          path: "/pages/product/:productName/:productTitle/:id",
         },
       ],
     },

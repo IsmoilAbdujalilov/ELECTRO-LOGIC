@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { products } from "../data/products";
+import { engineer } from "../data/engineer";
 
 const EngineerView = () => {
   const { id } = useParams();
@@ -10,7 +10,7 @@ const EngineerView = () => {
 
   const getOneEl = () => {
     let data: any = [];
-    const findData = products.map((el: any) => {
+    const findData = engineer.map((el: any) => {
       return el?.data.map((el: any) => {
         if (el?.id === Number(id)) {
           data.push(el);

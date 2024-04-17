@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
 import { products } from "../data/products";
+import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
-const Products = () => {
+const ProductData = () => {
   const { productId } = useParams();
   const [engineerData, setEngineerData] = useState<any>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -87,4 +87,4 @@ const Products = () => {
   );
 };
 
-export default Products;
+export default ProductData;

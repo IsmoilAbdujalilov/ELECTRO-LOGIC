@@ -1,14 +1,14 @@
+import { engineer } from "../data/engineer";
 import { useEffect, useState } from "react";
-import { products } from "../data/products";
 import { Link, useParams } from "react-router-dom";
 
-const Products = () => {
+const EngineerProducts = () => {
   const { productId } = useParams();
   const [engineerData, setEngineerData] = useState<any>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   const oneEngineerView = () => {
-    return products.find((el) => {
+    return engineer.find((el) => {
       if (el.id === Number(productId)) {
         setEngineerData([el]);
       }
@@ -22,12 +22,10 @@ const Products = () => {
     }, 1000);
   }, [productId]);
 
-  console.log(engineerData);
-
   return (
     <section id="products" style={{ backgroundColor: "#eee" }}>
       <div className="container py-5 mb-5">
-        <h2 className="text-center mb-5">Продукты</h2>
+        <h2 className="text-center mb-5">Инженер продукты</h2>
         <div className="row">
           {isLoading ? (
             <div className="d-flex justify-content-center">
@@ -44,7 +42,7 @@ const Products = () => {
                 return (
                   <div className="col-md-6 col-lg-4 mb-4 mb-md-0">
                     <Link
-                      to={`/pages/product/${catalogTitle}/${catalogName}/${el.id}`}
+                      to={`/pages/engineer-products/${catalogTitle}/${catalogName}/${el.id}`}
                       className="card"
                     >
                       <div className="d-flex justify-content-between p-3">
@@ -87,4 +85,4 @@ const Products = () => {
   );
 };
 
-export default Products;
+export default EngineerProducts;
