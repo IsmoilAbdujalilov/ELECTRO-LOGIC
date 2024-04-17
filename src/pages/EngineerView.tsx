@@ -9,21 +9,20 @@ const EngineerView = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   const getOneEl = () => {
-    let data: any = [];
-    let findData;
-    findData = engineer.map((el: any) => {
+    return engineer.map((el: any) => {
       return el?.data.map((el: any) => {
         if (el?.id === Number(id)) {
-          data.push(el);
+          return el;
         }
       });
     });
-    setOneElData(data);
   };
+
+  const data: any = getOneEl().flat();
 
   useEffect(() => {
     setTimeout(() => {
-      getOneEl();
+      setOneElData(data);
       setIsLoading(false);
     }, 1000);
   }, [id]);
