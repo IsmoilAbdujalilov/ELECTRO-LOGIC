@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { engineer } from "../data/engineer";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { GET_DATAS } from "../store/actions";
 
 const EngineerView = () => {
@@ -12,7 +12,6 @@ const EngineerView = () => {
   const [oneElData, setOneElData] = useState([]);
   const dispatch = useDispatch();
   const [isLoading, setIsLoading] = useState<boolean>(true);
-  const state = useSelector((state: any) => state.reducer.data);
   const [storageData, setStorageData] = useState<any>(
     JSON.parse(localStorage.getItem("data") as string)
   );
