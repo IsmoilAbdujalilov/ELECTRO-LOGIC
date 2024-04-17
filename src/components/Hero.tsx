@@ -1,6 +1,6 @@
 import { BackgroundVideo } from "../assets/videos";
 
-const App = () => {
+const Hero = () => {
   return (
     <div id="intro" className="bg-image vh-100 shadow-1-strong">
       <video
@@ -43,4 +43,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Hero;

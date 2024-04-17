@@ -44,7 +44,6 @@ const Header = () => {
   };
 
   const state = useSelector((state: any) => state.reducer.data);
-  console.log(state);
 
   return (
     <MDBNavbar

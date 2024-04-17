@@ -1,5 +1,8 @@
+import { addDoc, collection } from "firebase/firestore";
 import { DELETE_DATAS } from "../store/actions";
 import { useDispatch, useSelector } from "react-redux";
+import { db } from "../../firebaseConfig";
+import { ToastContainer, toast } from "react-toastify";
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -12,19 +15,45 @@ const Cart = () => {
     dispatch(DELETE_DATAS(deleteItem));
   };
 
-  console.log(store);
+  const { email } = JSON.parse(localStorage.getItem("token") as string);
+
+  console.log(email);
+
+  const dbRef = collection(db, "admin");
+
+  const sendToAdmin = async () => {
+    const addData = await addDoc(dbRef, { email, data: JSON.stringify(state) });
+    if (addData) {
+      toast.success("Винформация отправлена ​​администратору", {
+        autoClose: 2000,
+        draggable: true,
+        pauseOnHover: false,
+        position: "top-right",
+      });
+      localStorage.setItem("data", JSON.stringify([]));
+      dispatch(DELETE_DATAS([]));
+    } else {
+      toast.error("Данные не отправлены администратору", {
+        autoClose: 2000,
+        draggable: true,
+        pauseOnHover: false,
+        position: "top-right",
+      });
+    }
+  };
 
   return (
     <section className="cart py-5">
+      <ToastContainer />
       <div className="container">
         <table className="table align-middle mb-0 bg-white">
           <thead className="bg-light">
             <tr>
-              <th>Score</th>
-              <th>Image</th>
-              <th>Title</th>
-              <th>Name</th>
-              <th>Delete</th>
+              <th>Счет</th>
+              <th>Изображение</th>
+              <th>Заголовок</th>
+              <th>Имя</th>
+              <th>Удалить</th>
             </tr>
           </thead>
           <tbody>
@@ -59,7 +88,7 @@ const Cart = () => {
                         onClick={() => deleteEl(el.id)}
                         className="btn btn-danger btn-rounded btn-sm fw-bold"
                       >
-                        Delete
+                        Удалить
                       </button>
                     </td>
                   </tr>
@@ -67,6 +96,17 @@ const Cart = () => {
               })}
           </tbody>
         </table>
+        {store.length > 0 && (
+          <div className="d-flex justify-content-end py-3">
+            <button
+              onClick={() => sendToAdmin()}
+              className="btn btn-primary"
+              type="button"
+            >
+              Отправить администратору
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );
