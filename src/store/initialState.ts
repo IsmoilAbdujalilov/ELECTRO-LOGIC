@@ -1,11 +1,7 @@
 type initialStateTypes = {
-  data: [
-    {
-      [key: string]: any;
-    }
-  ];
+  data: any;
 };
 
 export const initialState: initialStateTypes = {
-  data: JSON.parse(localStorage.getItem("data") as string) || [],
+  data: [],
 };

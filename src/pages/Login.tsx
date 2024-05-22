@@ -15,13 +15,8 @@ const Registration = () => {
     try {
       await signInWithEmailAndPassword(auth, email, password);
       const user: any = auth.currentUser;
-      localStorage.setItem(
-        "token",
-        JSON.stringify({
-          email,
-          token: user?.stsTokenManager.accessToken,
-        })
-      );
+      localStorage.setItem("token", user?.stsTokenManager.accessToken);
+      localStorage.setItem("email", email);
       navigate("/");
       if (user) {
         await setDoc(doc(db, "users", user.uid), {

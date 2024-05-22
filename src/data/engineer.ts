@@ -8,6 +8,22 @@ import {
   EngineerImage6,
 } from "../assets/images/jpg/engineer/engineer-1";
 import {
+  EngineerBigTenImage1,
+  EngineerTenImage1,
+  EngineerTenImage10,
+  EngineerTenImage11,
+  EngineerTenImage12,
+  EngineerTenImage2,
+  EngineerTenImage3,
+  EngineerTenImage4,
+  EngineerTenImage5,
+  EngineerTenImage6,
+  EngineerTenImage7,
+  EngineerTenImage8,
+  EngineerTenImage9,
+} from "../assets/images/jpg/engineer/engineer-10";
+import { EngineerElevenBigImage1 } from "../assets/images/jpg/engineer/engineer-11";
+import {
   EngineerSecond1,
   EngineerSecond2,
 } from "../assets/images/jpg/engineer/engineer-2";
@@ -48,11 +64,59 @@ import {
   EngineerFiveImage5,
   EngineerFiveImage6,
 } from "../assets/images/jpg/engineer/engineer-5";
+import {
+  EngineerSixBigImage,
+  EngineerSixImage1,
+  EngineerSixImage2,
+  EngineerSixImage3,
+  EngineerSixImage4,
+  EngineerSixImage5,
+  EngineerSixImage6,
+} from "../assets/images/jpg/engineer/engineer-6";
+import {
+  EngineerSevenBigImage,
+  EngineerSevenImage1,
+  EngineerSevenImage10,
+  EngineerSevenImage11,
+  EngineerSevenImage12,
+  EngineerSevenImage2,
+  EngineerSevenImage3,
+  EngineerSevenImage4,
+  EngineerSevenImage5,
+  EngineerSevenImage6,
+  EngineerSevenImage7,
+  EngineerSevenImage8,
+  EngineerSevenImage9,
+} from "../assets/images/jpg/engineer/engineer-7";
+import {
+  EngineerEightBigImage,
+  EngineerEightImage1,
+  EngineerEightImage10,
+  EngineerEightImage11,
+  EngineerEightImage12,
+  EngineerEightImage2,
+  EngineerEightImage3,
+  EngineerEightImage4,
+  EngineerEightImage5,
+  EngineerEightImage6,
+  EngineerEightImage7,
+  EngineerEightImage8,
+  EngineerEightImage9,
+} from "../assets/images/jpg/engineer/engineer-8";
+import {
+  EngineerBigNineImage,
+  EngineerNineImage1,
+  EngineerNineImage2,
+  EngineerNineImage3,
+  EngineerNineImage4,
+  EngineerNineImage5,
+  EngineerNineImage6,
+} from "../assets/images/jpg/engineer/engineer-9";
 
 const engineer = [
   {
     id: 1,
-    count: 20,
+    count: 22,
     name: "Шкафы АВР на 2 ввода",
     data: [
       {
@@ -798,6 +862,397 @@ const engineer = [
           {
             id: 6,
             img: EngineerFiveImage6,
+          },
+        ],
+      },
+      {
+        id: 22,
+        image: EngineerFiveBigImage,
+        price: "504 900",
+        name: "АВР-Б-800-2-1",
+        title: "Шкаф АВР 800А, 2 ввода",
+        images: [
+          {
+            id: 1,
+            img: EngineerFiveImage1,
+          },
+          {
+            id: 2,
+            img: EngineerFiveImage2,
+          },
+          {
+            id: 3,
+            img: EngineerFiveImage3,
+          },
+          {
+            id: 4,
+            img: EngineerFiveImage4,
+          },
+          {
+            id: 5,
+            img: EngineerFiveImage5,
+          },
+          {
+            id: 6,
+            img: EngineerFiveImage6,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 2,
+    count: 7,
+    name: "Шкафы АВР на 3 ввода",
+    data: [
+      {
+        id: 1,
+        image: EngineerSixBigImage,
+        price: "493 900",
+        name: "АВР-Б-400-3-1G",
+        title: "Шкаф АВР 400А, 3 ввода",
+        images: [
+          {
+            id: 1,
+            img: EngineerSixImage1,
+          },
+          {
+            id: 2,
+            img: EngineerSixImage2,
+          },
+          {
+            id: 3,
+            img: EngineerSixImage3,
+          },
+          {
+            id: 4,
+            img: EngineerSixImage4,
+          },
+          {
+            id: 5,
+            img: EngineerSixImage5,
+          },
+          {
+            id: 6,
+            img: EngineerSixImage6,
+          },
+        ],
+      },
+      {
+        id: 2,
+        image: EngineerSevenBigImage,
+        price: "240 900",
+        name: "АВР-Б-250-3-1G",
+        title: "Шкаф АВР на 3 ввода 250А",
+        images: [
+          {
+            id: 1,
+            img: EngineerSevenImage1,
+          },
+          {
+            id: 2,
+            img: EngineerSevenImage2,
+          },
+          {
+            id: 3,
+            img: EngineerSevenImage3,
+          },
+          {
+            id: 4,
+            img: EngineerSevenImage4,
+          },
+          {
+            id: 5,
+            img: EngineerSevenImage5,
+          },
+          {
+            id: 6,
+            img: EngineerSevenImage6,
+          },
+          {
+            id: 7,
+            img: EngineerSevenImage7,
+          },
+          {
+            id: 8,
+            img: EngineerSevenImage8,
+          },
+          {
+            id: 9,
+            img: EngineerSevenImage9,
+          },
+          {
+            id: 10,
+            img: EngineerSevenImage10,
+          },
+          {
+            id: 11,
+            img: EngineerSevenImage11,
+          },
+          {
+            id: 12,
+            img: EngineerSevenImage12,
+          },
+        ],
+      },
+      {
+        id: 3,
+        image: EngineerEightBigImage,
+        price: "170 900",
+        name: "АВР-Б-100-3-1G",
+        title: "Шкаф АВР на 3 ввода 100А",
+        images: [
+          {
+            id: 1,
+            img: EngineerEightImage1,
+          },
+          {
+            id: 2,
+            img: EngineerEightImage2,
+          },
+          {
+            id: 3,
+            img: EngineerEightImage3,
+          },
+          {
+            id: 4,
+            img: EngineerEightImage4,
+          },
+          {
+            id: 5,
+            img: EngineerEightImage5,
+          },
+          {
+            id: 6,
+            img: EngineerEightImage6,
+          },
+          {
+            id: 7,
+            img: EngineerEightImage7,
+          },
+          {
+            id: 8,
+            img: EngineerEightImage8,
+          },
+          {
+            id: 9,
+            img: EngineerEightImage9,
+          },
+          {
+            id: 10,
+            img: EngineerEightImage10,
+          },
+          {
+            id: 11,
+            img: EngineerEightImage11,
+          },
+          {
+            id: 12,
+            img: EngineerEightImage12,
+          },
+        ],
+      },
+      {
+        id: 4,
+        image: EngineerBigNineImage,
+        price: "710 900",
+        name: "АВР-Б-630-3-1G",
+        title: "Шкаф АВР на 3 ввода 630A",
+        images: [
+          {
+            id: 1,
+            img: EngineerNineImage1,
+          },
+          {
+            id: 2,
+            img: EngineerNineImage2,
+          },
+          {
+            id: 3,
+            img: EngineerNineImage3,
+          },
+          {
+            id: 4,
+            img: EngineerNineImage4,
+          },
+          {
+            id: 5,
+            img: EngineerNineImage5,
+          },
+          {
+            id: 6,
+            img: EngineerNineImage6,
+          },
+        ],
+      },
+      {
+        id: 5,
+        image: EngineerBigTenImage1,
+        price: "238 900",
+        name: "АВР-Б-160-3-1G",
+        title: "Шкаф АВР на 3 ввода 160А",
+        images: [
+          {
+            id: 1,
+            img: EngineerTenImage1,
+          },
+          {
+            id: 2,
+            img: EngineerTenImage2,
+          },
+          {
+            id: 3,
+            img: EngineerTenImage3,
+          },
+          {
+            id: 4,
+            img: EngineerTenImage4,
+          },
+          {
+            id: 5,
+            img: EngineerTenImage5,
+          },
+          {
+            id: 6,
+            img: EngineerTenImage6,
+          },
+          {
+            id: 7,
+            img: EngineerTenImage7,
+          },
+          {
+            id: 8,
+            img: EngineerTenImage8,
+          },
+          {
+            id: 9,
+            img: EngineerTenImage9,
+          },
+          {
+            id: 10,
+            img: EngineerTenImage10,
+          },
+          {
+            id: 11,
+            img: EngineerTenImage11,
+          },
+          {
+            id: 12,
+            img: EngineerTenImage12,
+          },
+        ],
+      },
+      {
+        id: 6,
+        image: EngineerElevenBigImage1,
+        price: "168 900",
+        name: "АВР-Б-63-3-1G",
+        title: "Шкаф АВР на 3 ввода 63А",
+        images: [
+          {
+            id: 1,
+            img: EngineerTenImage1,
+          },
+          {
+            id: 2,
+            img: EngineerTenImage2,
+          },
+          {
+            id: 3,
+            img: EngineerTenImage3,
+          },
+          {
+            id: 4,
+            img: EngineerTenImage4,
+          },
+          {
+            id: 5,
+            img: EngineerTenImage5,
+          },
+          {
+            id: 6,
+            img: EngineerTenImage6,
+          },
+          {
+            id: 7,
+            img: EngineerTenImage7,
+          },
+          {
+            id: 8,
+            img: EngineerTenImage8,
+          },
+          {
+            id: 9,
+            img: EngineerTenImage9,
+          },
+          {
+            id: 10,
+            img: EngineerTenImage10,
+          },
+          {
+            id: 11,
+            img: EngineerTenImage11,
+          },
+          {
+            id: 12,
+            img: EngineerTenImage12,
+          },
+        ],
+      },
+      {
+        id: 7,
+        image: EngineerBigTenImage1,
+        price: "239 900",
+        name: "АВР-Б-200-3-1G",
+        title: "Шкаф АВР на 3 ввода 200А",
+        images: [
+          {
+            id: 1,
+            img: EngineerTenImage1,
+          },
+          {
+            id: 2,
+            img: EngineerTenImage2,
+          },
+          {
+            id: 3,
+            img: EngineerTenImage3,
+          },
+          {
+            id: 4,
+            img: EngineerTenImage4,
+          },
+          {
+            id: 5,
+            img: EngineerTenImage5,
+          },
+          {
+            id: 6,
+            img: EngineerTenImage6,
+          },
+          {
+            id: 7,
+            img: EngineerTenImage7,
+          },
+          {
+            id: 8,
+            img: EngineerTenImage8,
+          },
+          {
+            id: 9,
+            img: EngineerTenImage9,
+          },
+          {
+            id: 10,
+            img: EngineerTenImage10,
+          },
+          {
+            id: 11,
+            img: EngineerTenImage11,
+          },
+          {
+            id: 12,
+            img: EngineerTenImage12,
           },
         ],
       },

@@ -9,15 +9,15 @@ const Cart = () => {
   const state = JSON.parse(localStorage.getItem("data") as string) || [];
   const store = useSelector((state: any) => state.reducer.data);
 
+  console.log(store);
+
   const deleteEl = (id: number) => {
     const deleteItem = store.filter((el: any) => el.id !== id);
     localStorage.setItem("data", JSON.stringify(deleteItem));
     dispatch(DELETE_DATAS(deleteItem));
   };
 
-  const { email } = JSON.parse(localStorage.getItem("token") as string);
-
-  console.log(email);
+  const email: string | unknown = localStorage.getItem("email") || "";
 
   const dbRef = collection(db, "admin");
 
@@ -57,8 +57,8 @@ const Cart = () => {
             </tr>
           </thead>
           <tbody>
-            {state.length > 0 &&
-              state.map((el: any, index: number) => {
+            {store.length > 0 &&
+              store.map((el: any, index: number) => {
                 return (
                   <tr key={el.id}>
                     <td>
@@ -96,7 +96,7 @@ const Cart = () => {
               })}
           </tbody>
         </table>
-        {store.length > 0 && (
+        {store?.length > 0 && (
           <div className="d-flex justify-content-end py-3">
             <button
               onClick={() => sendToAdmin()}

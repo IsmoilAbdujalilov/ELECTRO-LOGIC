@@ -1,90 +1,129 @@
-import { engineer } from "../data/engineer";
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import { engineer } from "../data/engineer";
+import { useDispatch } from "react-redux";
+import { GET_DATAS } from "../store/actions";
 
-const EngineerProducts = () => {
-  const { productId } = useParams();
-  const [engineerData, setEngineerData] = useState<any>([]);
+const EngineerView = () => {
+  const params: any = useParams();
+  const navigate = useNavigate();
+  const token = localStorage.getItem("token");
+  const [oneElData, setOneElData] = useState([]);
+  const dispatch = useDispatch();
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
-  const oneEngineerView = () => {
-    return engineer.find((el) => {
-      if (el.id === Number(productId)) {
-        setEngineerData([el]);
-      }
-    });
-  };
+  const data = engineer[Number(params.productId)];
+  const filterData = engineer.find((el) => {
+    if (el.id === Number(params.id)) {
+      return el;
+    }
+  });
+
+  const findData = filterData?.data?.find((el) => {
+    if (el.id === Number(params.productId)) {
+      return el;
+    }
+  });
+
+  console.log(findData);
 
   useEffect(() => {
-    setTimeout(() => {
-      oneEngineerView();
-      setIsLoading(false);
-    }, 1000);
-  }, [productId]);
+    const data: any = [];
+
+    setOneElData(data);
+    setIsLoading(false);
+  }, [Number(params.productId)]);
+
+  const handleClick = (data: any) => {
+    console.log(data);
+
+    if (!token) {
+      navigate("/pages/login");
+    } else {
+      dispatch(GET_DATAS(data));
+    }
+  };
 
   return (
-    <section id="products" style={{ backgroundColor: "#eee" }}>
-      <div className="container py-5 mb-5">
-        <h2 className="text-center mb-5">Инженер продукты</h2>
-        <div className="row">
-          {isLoading ? (
-            <div className="d-flex justify-content-center">
-              <div className="spinner-border" role="status">
-                <span className="visually-hidden">Loading...</span>
+    <section className="py-5">
+      <div className="container">
+        <div className="row gx-5">
+          <aside className="col-lg-6">
+            <div className="border rounded-4 mb-3 d-flex justify-content-center">
+              <a
+                target="_blank"
+                data-type="image"
+                className="rounded-4"
+                data-fslightbox="mygalley"
+              >
+                <img
+                  width="100%"
+                  height={500}
+                  src={findData?.image}
+                  style={{
+                    width: "100%",
+                    objectFit: "cover",
+                    height: "500px",
+                    margin: "auto",
+                  }}
+                  className="rounded-4 fit"
+                />
+              </a>
+            </div>
+            <div className="row">
+              <div className="col-2"></div>
+            </div>
+            <div className="row gap-4">
+              {findData?.images?.map((el: any) => {
+                return (
+                  <a
+                    key={el?.id}
+                    href={el?.img}
+                    data-type="image"
+                    data-fslightbox="mygalley"
+                    className="col-1 rounded-2"
+                  >
+                    <img
+                      width="60"
+                      height="60"
+                      src={el?.img}
+                      className="rounded-2"
+                    />
+                  </a>
+                );
+              })}
+            </div>
+          </aside>
+          <main className="col-lg-6">
+            <div className="ps-lg-3">
+              <h4 className="title text-dark mt-3">{findData?.title}</h4>
+
+              <hr />
+
+              <div className="row mb-4">
+                <div className="col-md-4 col-6 mb-3">
+                  <div className="mb-3">
+                    <span className="h5">Цена: {findData?.price} ₽</span>
+                  </div>
+                </div>
+              </div>
+              <div className="d-flex flex-column gap-2">
+                <div className="box">
+                  <button
+                    type="button"
+                    onClick={() => handleClick(findData)}
+                    className="btn btn-primary shadow-0 w-100"
+                  >
+                    <i className="me-1 fa fa-shopping-basket"></i> Add to cart{" "}
+                  </button>
+                </div>
               </div>
             </div>
-          ) : (
-            engineerData.length > 0 &&
-            engineerData.map((outEl: any) => {
-              return outEl.data.map((el: any) => {
-                const catalogName = el?.name?.split(" ")?.join("-");
-                const catalogTitle = el?.title?.split(" ")?.join("-");
-                return (
-                  <div className="col-md-6 col-lg-4 mb-4 mb-md-0">
-                    <Link
-                      to={`/pages/engineer-products/${catalogTitle}/${catalogName}/${el.id}`}
-                      className="card mb-4 px-3"
-                    >
-                      <div className="d-flex justify-content-between p-3 align-items-center">
-                        <p className="lead mb-0" style={{fontSize: "18px"}}>
-                          Сегодняшнее комбо-предложение
-                        </p>
-                        <div
-                          style={{
-                            width: "35px",
-                            height: "35px",
-                            padding: "10px",
-                          }}
-                          className="bg-info rounded-circle d-flex align-items-center justify-content-center shadow-1-strong"
-                        >
-                          <p className="text-white mb-0 small">
-                            x{outEl.count}
-                          </p>
-                        </div>
-                      </div>
-                      <img
-                        height={325}
-                        style={{ width: "100%" }}
-                        src={el.image}
-                        className="card-img-top"
-                        alt="Gaming Laptop"
-                      />
-                      <div className="card-body">
-                        <div className="d-flex justify-content-between mb-3">
-                          <h5 className="mb-0" style={{width: "60%"}}>{el.title}</h5>
-                          <h5 className="text-dark mb-0">{el.price} ₽</h5>
-                        </div>
-                      </div>
-                    </Link>
-                  </div>
-                );
-              });
-            })
-          )}
+          </main>
         </div>
       </div>
     </section>
   );
 };
 
-export default EngineerProducts;
+export default EngineerView;

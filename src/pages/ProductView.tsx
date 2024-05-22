@@ -55,7 +55,6 @@ const EngineerView = () => {
         ) : (
           oneElData?.length > 0 &&
           oneElData?.map((el: any) => {
-            console.log(el);
             return (
               <div className="row gx-5">
                 <aside className="col-lg-6">

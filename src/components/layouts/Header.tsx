@@ -22,10 +22,13 @@ import { useSelector } from "react-redux";
 
 const Header = () => {
   const [openNavText, setOpenNavText] = useState<boolean>(false);
-  const { token } = JSON.parse(localStorage.getItem("token") as string) || {};
-  const [saveEmail, __] = useState<{ email: string; token: string }>(
-    JSON.parse(localStorage.getItem("token") as string)
-  );
+  // const { token } = JSON.parse(localStorage.getItem("token") as string) || {};
+  // const [saveEmail, __] = useState<{ email: string; token: string }>(
+  //   JSON.parse(localStorage.getItem("token") as string)
+  // );
+
+  const token = localStorage.getItem("token");
+  const email: string | unknown | null = localStorage.getItem("email");
 
   const navigate = useNavigate();
 
@@ -181,7 +184,7 @@ const Header = () => {
                     tag="a"
                     className="text-reset me-2 hidden-arrow"
                   >
-                    {saveEmail?.email.split("@gmail.com").join("")}
+                    {`${email}`.split("@gmail.com").join("")}
                   </MDBDropdownToggle>
                   <MDBDropdownMenu onClick={() => logoutClick()}>
                     <MDBDropdownItem link>Logout</MDBDropdownItem>
@@ -215,12 +218,12 @@ const Header = () => {
             </div> */}
             <div className="d-flex justify-content-center justify-content-md-end align-items-center">
               <MDBBtn
-                className="d-flex align-items-center"
                 onClick={() => handleClick()}
+                className="d-flex align-items-center"
               >
                 <MDBIcon fas icon="shopping-cart" />
                 <MDBBadge className="bg-white text-primary ms-2">
-                  {state.length}
+                  {/* {"length"} */}
                 </MDBBadge>
                 <span className="visually-hidden">unread messages</span>
               </MDBBtn>

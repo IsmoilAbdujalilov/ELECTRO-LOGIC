@@ -46,7 +46,7 @@ const App = () => {
         },
         {
           element: <EngineerProducts />,
-          path: "/pages/engineer-products/:productName/:productId",
+          path: "/pages/engineer-products/:productName/:id/:productId",
         },
         {
           element: <EngineerView />,

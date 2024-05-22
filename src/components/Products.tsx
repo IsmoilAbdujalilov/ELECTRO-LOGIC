@@ -22,7 +22,6 @@ const Products = () => {
     }, 1000);
   }, [productId]);
 
-  console.log(engineerData);
 
   return (
     <section id="products" style={{ backgroundColor: "#eee" }}>
